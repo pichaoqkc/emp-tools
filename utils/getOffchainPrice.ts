@@ -36,6 +36,10 @@ function isValidPrice<Price>(value: Price | null): value is Price {
   return value !== null;
 }
 
+function _getUgasFromJSON(jsonData: any) {
+  return Number(jsonData.price / 100000000000000000);
+}
+
 export const PRICEFEED_PARAMS: PricefeedParamsMap = {
   compusd: {
     invertedPrice: false,
@@ -64,12 +68,17 @@ export const PRICEFEED_PARAMS: PricefeedParamsMap = {
       "https://cors-anywhere.herokuapp.com/https://www.bitstamp.net/api/v2/ticker/btcusd",
     ],
   },
+  cny: {
+    invertedPrice: false,
+    source: ["https://ugasdata.info/current-twap"],
+  },
 };
 
 export function getPricefeedParamsFromTokenSymbol(symbol: string | null) {
   // This returns whichever "case" expression matches the conditional in `switch`.
   // In this case, whichever "case" expression evaluates to "true".
   // Source: https://stackoverflow.com/questions/4082204/javascript-conditional-switch-statement
+  console.log(`SYMBOLLLLLLL is ${symbol}`);
   switch (true) {
     case symbol?.includes("yCOMP"):
       return PRICEFEED_PARAMS.compusd;
@@ -87,6 +96,8 @@ export function getPricefeedParamsFromTokenSymbol(symbol: string | null) {
       return PRICEFEED_PARAMS.usdbtc;
     case symbol?.includes("YD-ETH"):
       return PRICEFEED_PARAMS.usdeth;
+    case symbol?.includes("cny"):
+      return PRICEFEED_PARAMS.cny;
     default:
       return null;
   }
@@ -115,6 +126,7 @@ export const getOffchainPriceFromTokenSymbol = async (symbol: string) => {
         try {
           const response = await fetch(url);
           const json = await response.json();
+          console.log(`URLLLLLLL is ${url}`);
 
           switch (true) {
             case url.includes("coinbase"):
@@ -125,6 +137,8 @@ export const getOffchainPriceFromTokenSymbol = async (symbol: string) => {
               return _getKrakenPriceFromJSON(json);
             case url.includes("bitstamp"):
               return _getBitstampPriceFromJSON(json);
+            case url.includes("ugasdata"):
+              return _getUgasFromJSON(json);
             default:
               return null;
           }

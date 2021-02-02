@@ -11,6 +11,7 @@ export const EMPs: { [networkId: number]: string[] } = {
     "0x1c3f1A342c8D9591D9759220d114C685FD1cF6b8", // YD-BTC-MAR21
   ],
   42: [
+    "0x1F5ecA19692249b25F2FcC5fC37EC6e21d7df1B9", // cnyUSD Kovan Fev01
     "0x3366b8549047C66E985EcC43026ceD3E831e46A9", // uUSDrBTC Kovan Sep20
     "0xFb70A4CBD537B36e647553C279a93E969b041DF0", //"Perpetual", yUSD Kovan Oct30
     "0xA000Dfe84A1852865d5231e0F6CBF0De08888abE", // uUSDrBTC Kovan Oct20
