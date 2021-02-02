@@ -50,17 +50,7 @@ const DisputeParams = () => {
     <Box>
       <Typography variant="h5">Dispute Params</Typography>
       <Status>
-        <Label>
-          Liquidation bond (
-          <Link
-            href={DOCS_MAP.FINAL_FEE}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Docs
-          </Link>
-          ){`: `}
-        </Label>
+        <Label>Liquidation bond {`: `}</Label>
         {finalFee !== null ? finalFee : "N/A"}{" "}
         {collSymbol !== null ? collSymbol : ""}
       </Status>
@@ -85,17 +75,7 @@ const DisputeParams = () => {
           : "N/A"}
       </Status>
       <Status>
-        <Label>
-          Withdraw liveness in mins (
-          <Link
-            href={DOCS_MAP.SLOW_WITHDRAW}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Docs
-          </Link>
-          ){`: `}
-        </Label>
+        <Label>Withdraw liveness in mins{`: `}</Label>
         <Tooltip
           title={`To withdraw past the global collateralization ratio, you will need to wait a liveness period before completing your withdrawal.`}
         >
@@ -103,17 +83,7 @@ const DisputeParams = () => {
         </Tooltip>
       </Status>
       <Status>
-        <Label>
-          Liquidation liveness in mins (
-          <Link
-            href={DOCS_MAP.FINAL_FEE}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Docs
-          </Link>
-          ){`: `}
-        </Label>
+        <Label>Liquidation liveness in mins{`: `}</Label>
         <Tooltip
           title={`After a liquidation is submitted the position enters into a liveness period during which the liquidation can be disputed if invalid.`}
         >

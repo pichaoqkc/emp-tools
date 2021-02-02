@@ -65,7 +65,7 @@ const GeneralInfo = () => {
     const expiryTimestamp = expiry.toString();
     const expiryDate = new Date(
       expiry.toNumber() * 1000
-    ).toLocaleString("en-GB", { timeZone: "UTC" });
+    ).toLocaleString("en-US", { timeZone: "America/Los_Angeles" });
     const prettyLatestPrice = Number(latestPrice).toFixed(8);
     const pricedGcr = (gcr / latestPrice).toFixed(8);
 
@@ -117,17 +117,7 @@ const GeneralInfo = () => {
         </Status>
 
         <Status>
-          <Label>
-            Is expired (
-            <Link
-              href={DOCS_MAP.EXPIRY_SETTLEMENT}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Docs
-            </Link>
-            ){`: `}
-          </Label>
+          <Label>Is expired{`: `}</Label>
           {isExpired}
         </Status>
 
@@ -151,14 +141,15 @@ const GeneralInfo = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {(index === 0 ? " [" : "") +
-                  ((url.includes("coinbase") && "Coinbase") ||
-                    (url.includes("kraken") && "Kraken") ||
-                    (url.includes("binance") && "Binance") ||
-                    (url.includes("bitstamp") && "Bitstamp") ||
-                    (url.includes("ugas") && "Ugas") ||
-                    "") +
-                  (index < sourceUrls.length - 1 ? ", " : "]")}
+                uForex
+                {/*{(index === 0 ? " [" : "") +*/}
+                {/*  ((url.includes("coinbase") && "Coinbase") ||*/}
+                {/*    (url.includes("kraken") && "Kraken") ||*/}
+                {/*    (url.includes("binance") && "Binance") ||*/}
+                {/*    (url.includes("bitstamp") && "Bitstamp") ||*/}
+                {/*    (url.includes("ugas") && "Ugas") ||*/}
+                {/*    "") +*/}
+                {/*  (index < sourceUrls.length - 1 ? ", " : "]")}*/}
               </Link>
             );
           })}
