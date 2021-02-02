@@ -81,6 +81,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_MARK_IGNORED_FILES_AS_EXCLUDED" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_package_manager_path" value="yarn" />
@@ -111,7 +112,7 @@
       <workItem from="1612289170761" duration="666000" />
       <workItem from="1612292932204" duration="5000" />
       <workItem from="1612298498046" duration="547000" />
-      <workItem from="1612299351389" duration="6544000" />
+      <workItem from="1612299351389" duration="6721000" />
     </task>
     <servers />
   </component>
