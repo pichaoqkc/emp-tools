@@ -156,34 +156,8 @@ export default function Index() {
           <>
             <Blurb>
               <Typography>
-                The Expiring Multi Party (EMP) is{" "}
-                <a
-                  href="https://umaproject.org/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  UMA
-                </a>
-                's most current financial smart contract template. This UI is a
-                community-made tool to make interfacing with the protocol
-                easier, please use at your own risk. The source code can be
-                viewed{" "}
-                <a
-                  href="https://github.com/UMAprotocol/emp-tools"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  here
-                </a>
-                . UMA's main Github can be viewed{" "}
-                <a
-                  href="https://github.com/UMAprotocol/protocol"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  here
-                </a>
-                .
+                The USD-Foreign Exchange(uForex) is a platform that provide
+                exchange for foreign currency synthetic tokens.
               </Typography>
             </Blurb>
             <ContractState />

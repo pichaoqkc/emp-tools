@@ -78,7 +78,7 @@ export function getPricefeedParamsFromTokenSymbol(symbol: string | null) {
   // This returns whichever "case" expression matches the conditional in `switch`.
   // In this case, whichever "case" expression evaluates to "true".
   // Source: https://stackoverflow.com/questions/4082204/javascript-conditional-switch-statement
-  console.log(`SYMBOLLLLLLL is ${symbol}`);
+  // console.log(`SYMBOLLLLLLL is ${symbol}`);
   switch (true) {
     case symbol?.includes("yCOMP"):
       return PRICEFEED_PARAMS.compusd;
@@ -126,7 +126,7 @@ export const getOffchainPriceFromTokenSymbol = async (symbol: string) => {
         try {
           const response = await fetch(url);
           const json = await response.json();
-          console.log(`URLLLLLLL is ${url}`);
+          // console.log(`URLLLLLLL is ${url}`);
 
           switch (true) {
             case url.includes("coinbase"):

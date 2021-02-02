@@ -80,7 +80,7 @@ const SettleExpired = () => {
     const priceIdUtf8 = hexToUtf8(priceIdentifier);
     const expiryDate = new Date(
       Number(expirationTimestamp) * 1000
-    ).toLocaleString("en-GB", { timeZone: "UTC" });
+    ).toLocaleString("en-US", { timeZone: "America/Los_Angeles" });
     const posTokens = Number(posTokensString);
     const posColl = Number(posCollString);
     const needsToRequestSettlementPrice = contractState === CONTRACT_STATE.OPEN;
