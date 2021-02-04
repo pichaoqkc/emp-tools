@@ -7,7 +7,8 @@ import {
 import { request } from "http";
 
 const umaLinkKovan = new HttpLink({
-  uri: "https://api.thegraph.com/subgraphs/name/umaprotocol/uma-kovan",
+  // uri: "https://api.thegraph.com/subgraphs/name/umaprotocol/uma-kovan",
+  uri: "https://api.thegraph.com/subgraphs/name/pichaoqkc/uforex",
 });
 const umaLinkMainnet = new HttpLink({
   uri: "https://api.thegraph.com/subgraphs/name/protofire/uma",

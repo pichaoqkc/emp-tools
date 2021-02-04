@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -37,7 +40,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2bb5fc99-748a-4245-863a-dca759532743" name="Default Changelist" comment="" />
+    <list default="true" id="2bb5fc99-748a-4245-863a-dca759532743" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apollo/client.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apollo/client.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants/syntheticTokenToExchangeMap.ts" beforeDir="false" afterPath="$PROJECT_DIR$/constants/syntheticTokenToExchangeMap.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/contract-state/GeneralInfo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/features/contract-state/GeneralInfo.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/emp-selector/EMPs.ts" beforeDir="false" afterPath="$PROJECT_DIR$/features/emp-selector/EMPs.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/getOffchainPrice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/utils/getOffchainPrice.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -56,12 +67,12 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
-                    <option name="branchName" value="test" />
-                    <option name="lastUsedInstant" value="1612224317" />
+                    <option name="branchName" value="master" />
+                    <option name="lastUsedInstant" value="1612308259" />
                   </RecentBranch>
                   <RecentBranch>
-                    <option name="branchName" value="master" />
-                    <option name="lastUsedInstant" value="1612224316" />
+                    <option name="branchName" value="test" />
+                    <option name="lastUsedInstant" value="1612224317" />
                   </RecentBranch>
                 </list>
               </option>
@@ -113,6 +124,13 @@
       <workItem from="1612292932204" duration="5000" />
       <workItem from="1612298498046" duration="547000" />
       <workItem from="1612299351389" duration="6721000" />
+      <workItem from="1612386428390" duration="445000" />
+      <workItem from="1612394902620" duration="1865000" />
+      <workItem from="1612464408980" duration="545000" />
+      <workItem from="1612465597029" duration="656000" />
+      <workItem from="1612467420217" duration="325000" />
+      <workItem from="1612469101420" duration="34000" />
+      <workItem from="1612470539849" duration="5013000" />
     </task>
     <servers />
   </component>
@@ -204,14 +222,14 @@
       <screen x="0" y="25" width="1680" height="1025" />
     </state>
     <state x="440" y="274" key="Vcs.Push.Dialog.v2/33.-875.1600.875/0.25.1680.1025@0.25.1680.1025" timestamp="1612304876103" />
-    <state x="541" y="292" width="597" height="490" key="find.popup" timestamp="1612306679856">
+    <state x="356" y="292" width="1324" height="490" key="find.popup" timestamp="1612394929322">
       <screen x="0" y="25" width="1680" height="1025" />
     </state>
-    <state x="541" y="292" width="597" height="490" key="find.popup/33.-875.1600.875/0.25.1680.1025@0.25.1680.1025" timestamp="1612306679856" />
-    <state x="505" y="252" width="670" height="676" key="search.everywhere.popup" timestamp="1612306687940">
+    <state x="356" y="292" width="1324" height="490" key="find.popup/33.-875.1600.875/0.25.1680.1025@0.25.1680.1025" timestamp="1612394929322" />
+    <state x="505" y="252" width="670" height="676" key="search.everywhere.popup" timestamp="1612399071679">
       <screen x="0" y="25" width="1680" height="1025" />
     </state>
     <state x="505" y="252" width="670" height="676" key="search.everywhere.popup/0.25.1680.1025/33.-875.1600.875@0.25.1680.1025" timestamp="1612227646797" />
-    <state x="505" y="252" width="670" height="676" key="search.everywhere.popup/33.-875.1600.875/0.25.1680.1025@0.25.1680.1025" timestamp="1612306687940" />
+    <state x="505" y="252" width="670" height="676" key="search.everywhere.popup/33.-875.1600.875/0.25.1680.1025@0.25.1680.1025" timestamp="1612399071679" />
   </component>
 </project>
