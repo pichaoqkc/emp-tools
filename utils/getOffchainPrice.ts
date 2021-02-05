@@ -39,8 +39,9 @@ function isValidPrice<Price>(value: Price | null): value is Price {
 function _getUgasFromJSON(jsonData: any) {
   return Number(jsonData.price / 50000000000000000);
 }
+
 function _getCnyFromJSON(jsonData: any) {
-  return Number(jsonData.price / 50000000000000000);
+  return Number(jsonData.quotes[0].ask);
 }
 
 export const PRICEFEED_PARAMS: PricefeedParamsMap = {
