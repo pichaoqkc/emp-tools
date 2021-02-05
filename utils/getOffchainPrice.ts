@@ -40,8 +40,7 @@ function _getUgasFromJSON(jsonData: any) {
   return Number(jsonData.price / 50000000000000000);
 }
 function _getCnyFromJSON(jsonData: any) {
-  console.log(`JSOOOOOOOOOON DATA ${jsonData}`);
-  return Number(jsonData.price / 1000000000000000000);
+  return Number(jsonData.price / 50000000000000000);
 }
 
 export const PRICEFEED_PARAMS: PricefeedParamsMap = {
@@ -74,8 +73,8 @@ export const PRICEFEED_PARAMS: PricefeedParamsMap = {
   },
   cny: {
     invertedPrice: false,
-    source: ["https://ugasdata.info/current-twap"],
-    // source: ["http://127.0.0.1:5000/"],
+    // source: ["https://ugasdata.info/current-twap"],
+    source: ["http://44.234.109.223:5000/"],
   },
 };
 
@@ -83,7 +82,6 @@ export function getPricefeedParamsFromTokenSymbol(symbol: string | null) {
   // This returns whichever "case" expression matches the conditional in `switch`.
   // In this case, whichever "case" expression evaluates to "true".
   // Source: https://stackoverflow.com/questions/4082204/javascript-conditional-switch-statement
-  // console.log(`SYMBOLLLLLLL is ${symbol}`);
   switch (true) {
     case symbol?.includes("yCOMP"):
       return PRICEFEED_PARAMS.compusd;
@@ -132,7 +130,6 @@ export const getOffchainPriceFromTokenSymbol = async (symbol: string) => {
           // const response = await fetch(url,{mode: 'no-cors', headers:{'Content-Type':'application/json'}});
           const response = await fetch(url);
           const json = await response.json();
-          console.log(`GEEEEEEEEET JSON ${json}`);
           switch (true) {
             case url.includes("coinbase"):
               return _getCoinbasePriceFromJSON(json);
