@@ -856,11 +856,7 @@ export default function Terms() {
         </p>
       </Box>
       <Box py={4} textAlign="center">
-        <a
-          href="https://vercel.com/?utm_source=uma%2Femp-tools"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a href="https://vercel.com" target="_blank" rel="noopener noreferrer">
           <strong>Powered by ▲ Vercel</strong>
         </a>
       </Box>

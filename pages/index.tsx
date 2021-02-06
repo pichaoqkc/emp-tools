@@ -181,7 +181,7 @@ export default function Index() {
         <IconButton
           style={{ marginRight: `8px` }}
           target="_blank"
-          href="https://twitter.com/umaprotocol"
+          href="https://twitter.com/"
           size="medium"
         >
           <TwitterIcon fontSize="inherit" />
@@ -194,11 +194,7 @@ export default function Index() {
         >
           <strong>Terms</strong>
         </a>
-        <a
-          href="https://vercel.com/?utm_source=uma%2Femp-tools"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a href="https://vercel.com" target="_blank" rel="noopener noreferrer">
           <strong>Powered by ▲ Vercel</strong>
         </a>
       </Box>
