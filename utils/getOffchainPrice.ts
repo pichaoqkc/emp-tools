@@ -74,7 +74,6 @@ export const PRICEFEED_PARAMS: PricefeedParamsMap = {
   },
   cny: {
     invertedPrice: false,
-    // source: ["https://ugasdata.info/current-twap"],
     source: ["http://44.234.109.223:5000/"],
   },
 };
