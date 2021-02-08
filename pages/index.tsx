@@ -178,14 +178,7 @@ export default function Index() {
         >
           <GitHubIcon fontSize="inherit" />
         </IconButton>
-        <IconButton
-          style={{ marginRight: `8px` }}
-          target="_blank"
-          href="https://twitter.com/"
-          size="medium"
-        >
-          <TwitterIcon fontSize="inherit" />
-        </IconButton>
+
         <a
           href="/terms"
           target="_blank"
