@@ -550,16 +550,14 @@ const PositionActionsDialog = (props: DialogProps) => {
 
                     {tabIndex === "liquidate" && (
                       <Box pt={2}>
-                        {connectedWalletAddress?.toLowerCase() !==
-                          props.selectedSponsor?.toLowerCase() && (
-                          <Box pt={2} pb={3}>
-                            <Alert severity="warning">
-                              The current {utils.parseBytes32String(priceId)}{" "}
-                              price {latestPrice.toFixed(8)} is not guaranteed
-                              to be the latest price but only for reference.
-                            </Alert>
-                          </Box>
-                        )}
+                        <Box pt={2} pb={3}>
+                          <Alert severity="warning">
+                            The current {utils.parseBytes32String(priceId)}{" "}
+                            price {latestPrice.toFixed(8)} is for reference
+                            only, please check real-time exchange rate from
+                            other sources like tradermade.
+                          </Alert>
+                        </Box>
                         <Typography component={"span"}>
                           <strong>Liquidate this sponsor</strong>
                           <br></br>For the position to be under collateralized{" "}
