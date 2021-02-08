@@ -74,7 +74,7 @@ export const PRICEFEED_PARAMS: PricefeedParamsMap = {
   },
   cny: {
     invertedPrice: false,
-    source: ["http://44.234.109.223:5000/cnyusd-price"],
+    source: ["https://uforexdata.com/cnyusd-price"],
   },
 };
 
