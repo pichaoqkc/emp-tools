@@ -23,9 +23,6 @@ export default class MyDocument extends Document {
         ...initialProps,
         styles: (
           <>
-            <Head>
-              <link rel="icon" type="image/x-icon" href="../public/money.ico" />
-            </Head>
             {initialProps.styles}
             {materialSheets.getStyleElement()}
             {styledComponentsSheet.getStyleElement()}

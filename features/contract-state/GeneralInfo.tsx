@@ -63,7 +63,7 @@ const GeneralInfo = () => {
     const expiryTimestamp = expiry.toString();
     const expiryDate = new Date(
       expiry.toNumber() * 1000
-    ).toLocaleString("en-US", { timeZone: "America/Los_Angeles" });
+    ).toLocaleString("en-GB", { timeZone: "UTC" });
     const prettyLatestPrice = Number(latestPrice).toFixed(8);
     const pricedGcr = (gcr / latestPrice).toFixed(8);
 
@@ -126,32 +126,11 @@ const GeneralInfo = () => {
 
         <Status>
           <Label>Identifier price: </Label>
-          {`${prettyLatestPrice}`}
+          <Tooltip title={"Data Source: TraderMade"}>
+            <span>{`${prettyLatestPrice}`} </span>
+          </Tooltip>
         </Status>
 
-        <Status>
-          <Label>Identifier sources: </Label>
-          {sourceUrls.map((url: string, index: number) => {
-            return (
-              <Link
-                key={index}
-                href={url}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                uForex
-                {/*{(index === 0 ? " [" : "") +*/}
-                {/*  ((url.includes("coinbase") && "Coinbase") ||*/}
-                {/*    (url.includes("kraken") && "Kraken") ||*/}
-                {/*    (url.includes("binance") && "Binance") ||*/}
-                {/*    (url.includes("bitstamp") && "Bitstamp") ||*/}
-                {/*    (url.includes("ugas") && "Ugas") ||*/}
-                {/*    "") +*/}
-                {/*  (index < sourceUrls.length - 1 ? ", " : "]")}*/}
-              </Link>
-            );
-          })}
-        </Status>
         <Status>
           <Label>Global collateral ratio: </Label>
           <Tooltip
