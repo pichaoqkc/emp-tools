@@ -99,7 +99,7 @@ export function getPricefeedParamsFromTokenSymbol(symbol: string | null) {
       return PRICEFEED_PARAMS.usdbtc;
     case symbol?.includes("YD-ETH"):
       return PRICEFEED_PARAMS.usdeth;
-    case symbol?.includes("cny"):
+    case symbol?.includes("CNY"):
       return PRICEFEED_PARAMS.cny;
     default:
       return null;
