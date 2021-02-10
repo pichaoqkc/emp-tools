@@ -157,7 +157,7 @@ export default function Index() {
             <Blurb>
               <Typography>
                 The uForex is a platform for trading different synthetic tokens
-                of foreign currencies
+                of foreign currencies.
               </Typography>
             </Blurb>
             <ContractState />
