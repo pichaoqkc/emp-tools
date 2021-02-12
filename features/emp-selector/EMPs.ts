@@ -12,7 +12,7 @@ export const EMPs: { [networkId: number]: string[] } = {
   ],
   42: [
     "0x25c651349d5C9026C0da499D179E6F1b18B7FCF5", // cnyusd kovan feb 08
-    "0x7179f21739277C9A5B1D87d18c97EaA0B5206A21", //cnyusd kovan mar 01
+    "0xc3b95bBE19f21fc51f7d3A47b8F7881d61e5D495", //cnyusd kovan mar 01
     // "0x8d952230216FDDa9874e4798254AF34c63da803c", //cnyUSD kovan mar 01
     // // "0xeb39543c834469eeEabD34F9c09F3602B9B20C84", //cnyUSD kovan Feb02 Expired
     // "0xF9771a82c3662A3Be33F6832A5cBc24BD0e6AAAa", //cnyUSD kovan Feb04 Expired
