@@ -127,8 +127,8 @@ export const getOffchainPriceFromTokenSymbol = async (symbol: string) => {
     const prices: (number | null)[] = await Promise.all(
       identifierParams.source.map(async (url: string) => {
         try {
-          // const response = await fetch(url,{mode: 'no-cors', headers:{'Content-Type':'application/json'}});
-          const response = await fetch(url);
+          const response = await fetch(url, { mode: "no-cors" });
+          // const response = await fetch(url);
           const json = await response.json();
           switch (true) {
             case url.includes("coinbase"):

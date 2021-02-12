@@ -21,20 +21,22 @@ const AllPositions = () => {
     setShowLiquidations(e.target.checked);
   };
 
-  if (latestPrice !== null && priceId !== null && symbol !== null) {
+  if (priceId !== null && symbol !== null) {
     const priceIdUtf8 = utils.parseBytes32String(priceId);
     const invertedPrice = isPricefeedInvertedFromTokenSymbol(symbol);
-    const prettyLatestPrice =
-      invertedPrice && latestPrice > 0
-        ? (1 / latestPrice).toFixed(6)
-        : latestPrice.toFixed(6);
+    let pricestate = `Cannot get latest price for ${priceIdUtf8}.`;
+    if (latestPrice !== null) {
+      const prettyLatestPrice =
+        invertedPrice && latestPrice > 0
+          ? (1 / latestPrice).toFixed(6)
+          : latestPrice.toFixed(6);
+      pricestate = `Estimated price of ${prettyLatestPrice} for ${priceIdUtf8}.`;
+    }
 
     return (
       <Box>
         <Box>
-          <Typography>
-            {`Estimated price of ${prettyLatestPrice} for ${priceIdUtf8}.`}
-          </Typography>
+          <Typography>{pricestate}</Typography>
         </Box>
         <Box pt={4}>
           <AllSponsors />

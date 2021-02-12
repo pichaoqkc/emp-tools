@@ -122,7 +122,6 @@ const PositionActionsDialog = (props: DialogProps) => {
   useEffect(() => {
     if (
       props.selectedSponsor !== null &&
-      latestPrice !== null &&
       collReq !== null &&
       tokenBalance !== null
     ) {
@@ -142,9 +141,10 @@ const PositionActionsDialog = (props: DialogProps) => {
       // - (TODO) If the current ratio of backing collateral to token debt is < `minCollPerToken`
       //   or > `maxCollPerToken`, then the user shouldn't be liquidating the position.
       //   Perhaps we should block this functionality in this situation.
-      const _minCollPerTokenToBeProfitable = latestPrice;
+      const _minCollPerTokenToBeProfitable =
+        latestPrice == null ? 0 : latestPrice;
       const _maxCollPerTokenToBeValid =
-        latestPrice * parseFloat(fromWei(collReq));
+        latestPrice == null ? 0 : latestPrice * parseFloat(fromWei(collReq));
 
       setMinCollPerTokenToBeProfitable(
         _minCollPerTokenToBeProfitable.toFixed(10)
@@ -197,7 +197,6 @@ const PositionActionsDialog = (props: DialogProps) => {
     activeSponsors[props.selectedSponsor] &&
     activeSponsors[props.selectedSponsor] !== null &&
     isExpired !== null &&
-    latestPrice !== null &&
     collReq !== null &&
     emp !== null &&
     currentTime !== null &&
@@ -256,7 +255,9 @@ const PositionActionsDialog = (props: DialogProps) => {
         : collRatio / parseFloat(fromWei(collReq));
 
     const underCollateralizedPercent =
-      Number(latestPrice) === 0
+      latestPrice == null
+        ? 0
+        : Number(latestPrice) === 0
         ? 0
         : ((Number(latestPrice) - Number(underCollateralizedPrice)) /
             Number(latestPrice)) *
@@ -446,10 +447,6 @@ const PositionActionsDialog = (props: DialogProps) => {
                   </Status>
                 )}
                 <Status>
-                  <Label>Collateral Ratio: </Label>
-                  {Number(sponsorPosition.cRatio).toFixed(4)}
-                </Status>
-                <Status>
                   <Label>Liquidation Price: </Label>
                   {Number(sponsorPosition.liquidationPrice).toFixed(4)}
                 </Status>
@@ -548,7 +545,18 @@ const PositionActionsDialog = (props: DialogProps) => {
                       </Box>
                     )}
 
-                    {tabIndex === "liquidate" && (
+                    {latestPrice == null && tabIndex === "liquidate" && (
+                      <Box pt={2}>
+                        <Box pt={2} pb={3}>
+                          <Alert severity="warning">
+                            Cannot liquidate until latest price for
+                            {utils.parseBytes32String(priceId)} can be referred.
+                          </Alert>
+                        </Box>
+                      </Box>
+                    )}
+
+                    {latestPrice != null && tabIndex === "liquidate" && (
                       <Box pt={2}>
                         <Box pt={2} pb={3}>
                           <Alert severity="warning">
