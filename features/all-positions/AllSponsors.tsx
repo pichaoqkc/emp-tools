@@ -272,7 +272,9 @@ const AllSponsors = () => {
                       {prettyBalance(Number(activeSponsor.tokensOutstanding))}
                     </TableCell>
                     <TableCell align="right">
-                      {prettyBalance(Number(activeSponsor.cRatio))}
+                      {activeSponsor.cRatio == "0"
+                        ? "N/A"
+                        : prettyBalance(Number(activeSponsor.cRatio))}
                     </TableCell>
                     <TableCell align="right">
                       {prettyBalance(Number(activeSponsor.liquidationPrice))}

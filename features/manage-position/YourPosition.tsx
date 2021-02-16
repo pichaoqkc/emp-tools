@@ -61,7 +61,6 @@ const YourPosition = () => {
     collSymbol !== null &&
     collDec !== null &&
     tokenSymbol !== null &&
-    latestPrice !== null &&
     collReq !== null &&
     priceIdentifier !== null &&
     withdrawAmtString !== null &&
@@ -69,8 +68,17 @@ const YourPosition = () => {
     pendingTransfer !== null
   ) {
     const pricedCR =
-      latestPrice !== 0 ? (cRatio / latestPrice).toFixed(4) : "0";
-    const pricedGCR = latestPrice !== 0 ? (gcr / latestPrice).toFixed(4) : "0";
+      latestPrice == null
+        ? "N/A"
+        : latestPrice !== 0
+        ? (cRatio / latestPrice).toFixed(4)
+        : "0";
+    const pricedGCR =
+      latestPrice == null
+        ? "N/A"
+        : latestPrice !== 0
+        ? (gcr / latestPrice).toFixed(4)
+        : "0";
     const collReqFromWei = parseFloat(fromWei(collReq));
     const tokens = Number(tokenString);
     const collateral = Number(collString);
@@ -83,7 +91,8 @@ const YourPosition = () => {
       isPricefeedInvertedFromTokenSymbol(tokenSymbol)
     ).toFixed(4);
     const priceIdUtf8 = hexToUtf8(priceIdentifier);
-    const prettyLatestPrice = Number(latestPrice).toFixed(6);
+    const prettyLatestPrice =
+      latestPrice == null ? "N/A" : Number(latestPrice).toFixed(6);
 
     return renderComponent(
       pricedCR,

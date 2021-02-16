@@ -52,20 +52,26 @@ const GeneralInfo = () => {
     activeSponsors !== null &&
     expiry !== null &&
     gcr !== null &&
-    latestPrice !== null &&
     priceId !== null &&
     collReq !== null &&
     minSponsorTokens !== null &&
     tokenSymbol !== null &&
-    isExpired !== null &&
-    sourceUrls !== undefined
+    isExpired !== null
   ) {
     const expiryTimestamp = expiry.toString();
     const expiryDate = new Date(
       expiry.toNumber() * 1000
     ).toLocaleString("en-GB", { timeZone: "UTC" });
-    const prettyLatestPrice = Number(latestPrice).toFixed(8);
-    const pricedGcr = (gcr / latestPrice).toFixed(8);
+    let prettyLatestPrice = defaultMissingDataDisplay;
+    let pricedGcr: string = defaultMissingDataDisplay;
+    if (latestPrice != null) {
+      prettyLatestPrice = Number(latestPrice).toFixed(8);
+      pricedGcr = (gcr / latestPrice).toFixed(8);
+    }
+    let srcUrls: string[] = [];
+    if (sourceUrls != undefined) {
+      srcUrls = sourceUrls;
+    }
 
     const priceIdUtf8 = parseBytes32String(priceId);
     const collReqPct = parseFloat(fromWei(collReq)).toString();
@@ -83,7 +89,7 @@ const GeneralInfo = () => {
       collReqPct,
       minSponsorTokensSymbol,
       isExpired ? "YES" : "NO",
-      sourceUrls,
+      srcUrls,
       sponsorCount
     );
   } else {

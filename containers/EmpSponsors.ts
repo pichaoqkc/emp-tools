@@ -98,7 +98,6 @@ const useEmpSponsors = () => {
 
     if (
       emp !== null &&
-      latestPrice !== null &&
       collateralRequirement !== null &&
       collDecs !== null &&
       tokenSymbol !== null
@@ -126,11 +125,15 @@ const useEmpSponsors = () => {
               Number(position.collateral) -
               Number(position.withdrawalRequestAmount);
 
-            const cRatio = getCollateralRatio(
-              backingCollateral,
-              Number(position.tokensOutstanding),
-              latestPrice
-            );
+            let cRatio = 0;
+            if (latestPrice != null) {
+              cRatio = getCollateralRatio(
+                backingCollateral,
+                Number(position.tokensOutstanding),
+                latestPrice
+              );
+            }
+
             const liquidationPrice = getLiquidationPrice(
               backingCollateral,
               Number(position.tokensOutstanding),
