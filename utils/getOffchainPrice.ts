@@ -40,7 +40,7 @@ function _getUgasFromJSON(jsonData: any) {
   return Number(jsonData.price / 50000000000000000);
 }
 
-function _getCnyFromJSON(jsonData: any) {
+function _getUforexFromJSON(jsonData: any) {
   return Number(jsonData.quotes[0].ask);
 }
 
@@ -76,6 +76,10 @@ export const PRICEFEED_PARAMS: PricefeedParamsMap = {
     invertedPrice: false,
     source: ["https://uforexdata.com/cnyusd-price"],
   },
+  eur: {
+    invertedPrice: false,
+    source: ["https://uforexdata.com/eurusd-price"],
+  },
 };
 
 export function getPricefeedParamsFromTokenSymbol(symbol: string | null) {
@@ -101,6 +105,8 @@ export function getPricefeedParamsFromTokenSymbol(symbol: string | null) {
       return PRICEFEED_PARAMS.usdeth;
     case symbol?.includes("CNY"):
       return PRICEFEED_PARAMS.cny;
+    case symbol?.includes("EUR"):
+      return PRICEFEED_PARAMS.eur;
     default:
       return null;
   }
@@ -142,7 +148,7 @@ export const getOffchainPriceFromTokenSymbol = async (symbol: string) => {
             case url.includes("ugasdata"):
               return _getUgasFromJSON(json);
             default:
-              return _getCnyFromJSON(json);
+              return _getUforexFromJSON(json);
           }
         } catch (err) {
           console.error(
