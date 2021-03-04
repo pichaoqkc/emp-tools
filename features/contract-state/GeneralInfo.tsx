@@ -11,6 +11,7 @@ import EmpSponsors from "../../containers/EmpSponsors";
 import Totals from "../../containers/Totals";
 import PriceFeed from "../../containers/PriceFeed";
 import Etherscan from "../../containers/Etherscan";
+import { number } from "prop-types";
 
 const Label = styled.span`
   color: #999999;
@@ -44,7 +45,7 @@ const GeneralInfo = () => {
     minSponsorTokens,
     isExpired,
   } = empState;
-  const { symbol: tokenSymbol } = Token.useContainer();
+  const { symbol: tokenSymbol, decimals: tokenDec } = Token.useContainer();
 
   const defaultMissingDataDisplay = "N/A";
 
@@ -56,6 +57,7 @@ const GeneralInfo = () => {
     collReq !== null &&
     minSponsorTokens !== null &&
     tokenSymbol !== null &&
+    tokenDec !== null &&
     isExpired !== null
   ) {
     const expiryTimestamp = expiry.toString();
@@ -75,8 +77,8 @@ const GeneralInfo = () => {
 
     const priceIdUtf8 = parseBytes32String(priceId);
     const collReqPct = parseFloat(fromWei(collReq)).toString();
-    const minSponsorTokensSymbol = `${fromWei(
-      minSponsorTokens
+    const minSponsorTokensSymbol = `${parseFloat(
+      fromWei(minSponsorTokens, tokenDec)
     )} ${tokenSymbol}`;
 
     const sponsorCount = Object.keys(activeSponsors).length.toString();

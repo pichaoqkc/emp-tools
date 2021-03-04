@@ -11,7 +11,7 @@ const umaLinkKovan = new HttpLink({
   uri: "https://api.thegraph.com/subgraphs/name/pichaoqkc/uforex",
 });
 const umaLinkMainnet = new HttpLink({
-  uri: "https://api.thegraph.com/subgraphs/name/protofire/uma",
+  uri: "https://api.thegraph.com/subgraphs/name/umaprotocol/uma",
 });
 const balancerLink = new HttpLink({
   uri: "https://api.thegraph.com/subgraphs/name/balancer-labs/balancer",
