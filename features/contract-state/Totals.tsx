@@ -69,8 +69,8 @@ const Totals = () => {
       undefined,
       {
         style: "decimal",
-        maximumFractionDigits: 4,
-        minimumFractionDigits: 4,
+        maximumFractionDigits: 2,
+        minimumFractionDigits: 2,
       }
     );
     const prettyTotalTokens = Number(totalTokens).toLocaleString(undefined, {
