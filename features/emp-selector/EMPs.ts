@@ -1,7 +1,7 @@
 export const EMPs: { [networkId: number]: string[] } = {
   1: [
-    "0x384e239a2B225865558774b005C3d6eC29f8cE70", //cnyusd mainnet april
-    "0x6618Ff5a7dcea49F1AADA3BaFde3e87fe28D1303", //eurusd mainnet april
+    "0x0388f65C185a7E7D857BB142185381d97a4bc747", //cnyusd mainnet april
+    "0x9bB1f39b6DB45BD087046385a43EAb7b60C52e7D", //eurusd mainnet april
   ],
   42: [
     "0xc3b95bBE19f21fc51f7d3A47b8F7881d61e5D495", //cnyusd kovan mar 01
